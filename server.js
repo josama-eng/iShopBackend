@@ -11,7 +11,8 @@ const orderRoute = require("./routes/order");
 const server = express();
 const PORT = process.env.PORT || 5000;
 
-server.use(cors());
+// server.use(cors());
+server.use(cors({ origin: true, credentials: true }));
 server.use(express.json());
 server.use("/public", express.static(path.join(__dirname, "public")));
 
